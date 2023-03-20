@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Todo - List - Update</title>
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+    <style>
+        form {
+            display: inline-block;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 4px;
+            background-color: #fff;
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        label {
+            text-align: left;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        h1{
+            text-align: center;
+        }
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        input[type=date] {
+            width: 50%;
+        }
+
+        button[type=submit] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button[type=submit]:hover {
+            background-color: #0062cc;
+        }
+
+        button[type=submit]:active {
+            background-color: #005cbf;
+        }
+    </style>
+</head>
+    <h1>Update Task</h1>
+    <body>
+    <form id="add-task-form" th:action="@{/updateTodo}" th:object="${todo}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <label placeholder="Enter title here" >Title:</label>
+        <input type="text" id="titleAddTodo" name="title" th:field="*{title}">
+
+        <label placeholder="Enter Description here">Description:</label>
+        <textarea id="descriptionAddTodo" name="description" th:field="*{description}"></textarea>
+
+        <label placeholder="Enter startdate here">Start Date:</label>
+        <input type="date" id="startdateAddTodo" name="start-date" th:field="*{startdate}">
+
+        <label placeholder="Enter duedate here">Due Date:</label>
+        <input type="date" id="duedateAddTodo" name="due-date" th:field="*{duedate}">
+
+        <label placeholder="Enter status here">Status:</label>
+        <input type="text" id="statusAddTodo" name="status" th:field="*{status}">
+
+        <label placeholder="Enter functions here">Functions:</label>
+        <input type="text" id="functionsAddTodo" name="functions" th:field="*{functions}">
+        <a th:href="@{/index}"> <- Back to Task List</a>
+        <button class="btn btn-primary py-2 px-4" > Sửa </button>
+
+    </form>
+
+    </body>
+</html>

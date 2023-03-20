@@ -1,0 +1,66 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+form label {
+    display: block;
+}
+
+form input[type="text"],
+form textarea,
+form select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form button[type="submit"] {
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+
+th {
+    background-color: #eee;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.delete-btn {
+    padding: 5px;
+}
+.edit-button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.delete-button {
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: red;
+}
+
