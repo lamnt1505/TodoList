@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -32,8 +33,7 @@ public class Todos {
     @Column(name = "duedate")
     private LocalDate duedate;
 
-    @Column(name = "status",columnDefinition = "nvarchar(255)")
-    private String status;
+    private boolean status;
 
     @Column(name = "funcstions",columnDefinition = "nvarchar(255)")
     private String functions;

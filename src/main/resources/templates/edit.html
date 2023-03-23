@@ -85,11 +85,9 @@
         <label placeholder="Enter duedate here">Due Date:</label>
         <input type="date" id="duedateAddTodo" name="due-date" th:field="*{duedate}">
 
-        <label placeholder="Enter status here">Status:</label>
-        <input type="text" id="statusAddTodo" name="status" th:field="*{status}">
-
         <label placeholder="Enter functions here">Functions:</label>
         <input type="text" id="functionsAddTodo" name="functions" th:field="*{functions}">
+
         <a th:href="@{/index}"> <- Back to Task List</a>
         <button class="btn btn-primary py-2 px-4" > Sửa </button>
 

@@ -18,7 +18,6 @@ import java.util.List;
 public class TodoController {
     @Autowired
     private TodoService todoService;
-
     @GetMapping("/index")
     public String index(Model model) {
         List<Todos> todo = todoService.findAll();
@@ -33,6 +32,14 @@ public class TodoController {
         return "add";
     }
 
+    @PostMapping("/savetodo")
+    public String saveTask(@ModelAttribute("todos") Todos todos,RedirectAttributes redirect) {
+        todos.setStatus(false);
+        todoService.save(todos);
+        redirect.addFlashAttribute("success", "Thêm mới thành công!");
+        return "redirect:/index";
+    }
+
     @GetMapping("/updateTodo/{id}")
     public String updateTodoForm(Model model, @PathVariable(name = "id") long id) {
         model.addAttribute("todo",todoService.findById(id));
@@ -44,6 +51,7 @@ public class TodoController {
         if(result.hasErrors()){
             return "/updateTodo";
         }else {
+            todos.setStatus(false);
             todoService.save(todos);
             redirect.addFlashAttribute("success", "Chỉnh sửa thông tin thành công!");
         }

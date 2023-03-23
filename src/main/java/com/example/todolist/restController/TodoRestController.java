@@ -35,10 +35,12 @@ public class TodoRestController {
         return todo;
     }
 
-    @PutMapping("/rest/todo/update/{id}")
-    public Todos put(@PathVariable("id") Long id,@RequestBody Todos todo){
-        todoService.save(todo);
-        return todo;
+    @PostMapping("/rest/todo/update/{id}")
+    public Todos put(@PathVariable("id") Long id){
+        Todos todos = todoService.getTodoById(id);
+        todos.setStatus(true);
+        todoService.save(todos);
+        return todos;
     }
 
     @DeleteMapping("/rest/todo/delete/{id}")
