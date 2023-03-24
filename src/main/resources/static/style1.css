@@ -37,10 +37,6 @@ th {
     background-color: #eee;
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
 .actions {
     display: flex;
     justify-content: center;
@@ -64,6 +60,6 @@ tr:nth-child(even) {
     color: red;
 }
 .completed {
-    background-color: #8f66ff; /* light blue */
+    background-color: #667fff;
 }
 

@@ -81,10 +81,11 @@
         <label for="dueDate" >Due Date:</label>
         <input type="date" id="dueDate" th:field="*{duedate}" />
         <br/>
-        <label for="functions" >Description:</label>
+        <label for="functions" >Functions:</label>
         <input type="text" id="functions" th:field="*{functions}" />
         <br/>
         <button class="btn btn-primary py-2 px-4" > Thêm Mới </button>
-        <a th:href="@{/tasks}">Back to Task List</a>
+        <a th:href="@{/index}">Back to Task List</a>
+
     </form>
 </html>
